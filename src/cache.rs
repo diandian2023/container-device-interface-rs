@@ -270,7 +270,7 @@ impl Cache {
                     // allow dev.edits to be added even if spec.edits is None
                     if let Some(ce) = spec.edits() {
                         edits.append(ce);
-                        return Err(format!("1111111111: ce={:?}", ce));
+                        return Err(format!("1111111111: ce={:?}", ce).into());
                     }
                 }
                 //edits.append(dev.edits())?;
