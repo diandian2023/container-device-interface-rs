@@ -264,8 +264,8 @@ impl Cache {
 
         for device in devices {
             if let Some(dev) = self.devices.get(&device) {
+                let mut spec = dev.get_spec();
                 return Err(format!("1111111111: specs={:?}, spec={:?}", specs, spec.clone()).into());
-                //let mut spec = dev.get_spec();
                 if specs.insert(spec.clone()) {
                     // spec.edits may be none when we only have dev.edits
                     // allow dev.edits to be added even if spec.edits is None
