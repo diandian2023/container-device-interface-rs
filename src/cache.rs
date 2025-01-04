@@ -273,7 +273,7 @@ impl Cache {
                     }
                 }
                 edits.append(dev.edits())?;
-                return Err(format!("1111111111: dev.edits()={:?}, edits={:?}", dev.edits(), edits.join(", ")));
+                return Err(format!("1111111111: dev.edits()={:?}, edits={:?}", dev.edits(), edits));
             } else {
                 unresolved.push(device);
             }
