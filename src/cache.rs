@@ -268,9 +268,10 @@ impl Cache {
                 if specs.insert(spec.clone()) {
                     // spec.edits may be none when we only have dev.edits
                     // allow dev.edits to be added even if spec.edits is None
-                    //if let Some(ce) = spec.edits() {
-                    //    edits.append(ce)?
-                    //}
+                    if let Some(ce) = spec.edits() {
+                        edits.append(ce)?
+                        return Err(format!("1111111111: cd={:?}, edits={:?}", cd, edits).info());
+                    }
                 }
                 //edits.append(dev.edits())?;
                 //return Err(format!("1111111111: dev.edits()={:?}, edits={:?}", dev.edits(), edits).into());
